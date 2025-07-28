@@ -8,9 +8,9 @@ import "./App.css";
 function App() {
 
   return (
-    <>
+    <div className="overflow-auto overflow-x-hidden w-full h-screen">
       <Layout />
-    </>
+    </div>
   );
 }
 

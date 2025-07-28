@@ -30,8 +30,7 @@ export default function Services() {
     getService();
   }, []);
 
-  const filteredServices = services.filter((service) =>
-  {
+  const filteredServices = services.filter((service) => {
     return service.name.toLowerCase().includes(searchQuery.toLowerCase())
   }
   );
@@ -52,10 +51,10 @@ export default function Services() {
   };
 
   return (
-    <section className={`py-7 px-6 md:px-16 ${currTheme === " light" ?
-  " bg-gradient-to-b from-blue-100 via-pink-50 to-purple-100"
-          : "bg-gradient-to-t from-[#0f172a] via-gray-600 to-[#0f172a]"
-} `}>
+    <section className={`py-7 min-h-screen px-6 md:px-16 ${currTheme === "light" ?
+      " bg-gradient-to-b from-blue-100 via-pink-50 to-purple-100"
+      : "bg-gradient-to-t from-[#0f172a] via-gray-600 to-[#0f172a]"
+      } `}>
       <div className="text-center mb-10">
         <h1 className={`text-4xl md:text-5xl font-bold ${currTheme === "light" ? "text-indigo-800" : "text-slate-200"} mb-4 font-serif`}>
           🏥 Our Equipments & Services 🏥
@@ -95,7 +94,7 @@ export default function Services() {
             <div key={index} className="hover:scale-105 transition-transform duration-300">
               <ServicesInfoCard service={{
                 ...service,
-                name : highlightMatch(service.name, searchQuery)
+                name: highlightMatch(service.name, searchQuery)
               }} />
             </div>
           ))

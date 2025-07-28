@@ -19,7 +19,7 @@ import { useSetTheme } from "../../context/ThemeProvider";
 export default function RightSideDrawer({ handleLogOut }) {
   const user = JSON.parse(localStorage.getItem("User"));
   const doctor = JSON.parse(localStorage.getItem("Doctor"))
-  const ProfileTag = user?.username.charAt(0).toUpperCase() || doctor?.email.charAt(0).toUpperCase();
+  const ProfileTag = user?.username?.charAt(0).toUpperCase() || doctor?.email.charAt(0).toUpperCase();
 
   // State to manage the drawer's open/close status
   const [open, setOpen] = React.useState(false);
@@ -83,25 +83,25 @@ export default function RightSideDrawer({ handleLogOut }) {
           {/* Menu Items */}
           <ul
             className="flex flex-col gap-4 px-6 py-4 text-base font-medium"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
+            onClick={() => { toggleDrawer(false) }}
+            onKeyDown={() => { toggleDrawer(false) }}
           >
-            <li className="flex items-center gap-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition">
+            <Link  to="/p/appointments" className="flex items-center gap-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition">
               <User size={20} />
               Profile
-            </li>
-            <li className="flex items-center gap-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition">
+            </Link>
+            <Link  to="/p/appointments" className="flex items-center gap-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition">
               <Calendar size={20} />
               My Appointments
-            </li>
-            <li className="flex items-center gap-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition">
+            </Link>
+            <Link  to="/p/appointments" className="flex items-center gap-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition">
               <UserCheck size={20} />
               My Doctors
-            </li>
-            <li className="flex items-center gap-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition">
+            </Link>
+            <Link  to="/p/appointments" className="flex items-center gap-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition">
               <Settings size={20} />
               Settings
-            </li>
+            </Link>
           </ul>
           <hr className="border-gray-300 dark:border-gray-700" />
         </div>

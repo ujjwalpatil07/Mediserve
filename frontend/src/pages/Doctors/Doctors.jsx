@@ -16,7 +16,7 @@ export default function Doctors() {
     const getDoctor = async () => {
       try {
         const response = await axios.get("http://localhost:4001/d_data");
-        console.log("Fetched doctor data:", response.data);  // Check data here
+        // console.log("Fetched doctor data:", response.data);  // Check data here
         setDoctors(response.data);
         setLoading(false);
       } catch (error) {

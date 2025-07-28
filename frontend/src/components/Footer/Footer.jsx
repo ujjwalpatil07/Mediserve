@@ -5,7 +5,7 @@ import { useSetTheme } from "../../context/ThemeProvider";
 export default function Footer() {
   const [currTheme] = useSetTheme();
   return (
-    <footer
+    <div
       className={`w-full border-t px-6 py-10 ${currTheme === "light"
           ? "border-gray-300 bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200"
           : "border-slate-700 bg-gradient-to-t from-slate-900 via-slate-800 to-slate-700"
@@ -92,6 +92,6 @@ export default function Footer() {
           </div>
         ))}
       </div>
-    </footer>
+    </div>
   );
 }

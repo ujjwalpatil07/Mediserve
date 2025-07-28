@@ -94,7 +94,7 @@ export default function D_Reviews({doctor}) {
               className={`text-xl font-semibold ${currTheme === "dark" ? "text-amber-300" : "text-gray-800"
                 }`}
             >
-              {authUser.username.toUpperCase()}
+              {authUser?.username?.toUpperCase()}
             </h2>
 
             {/* Textarea */}

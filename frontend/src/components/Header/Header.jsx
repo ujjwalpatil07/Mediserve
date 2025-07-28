@@ -58,10 +58,10 @@ export default function Header() {
 
 
   return (
-    <header className={`fixed left-0 top-0 z-50 flex w-screen items-center justify-between px-4 py-3 shadow-md md:px-8
+    <div className={`flex w-full items-center justify-between px-4 py-3  md:px-8
     ${currTheme === "light"
-        ? "bg-white text-gray-800 shadow-md border-b"
-        : "bg-[#1e293b] text-white shadow-lg border-b border-slate-600"} 
+        ? "bg-white text-gray-800 shadow-md "
+        : "bg-[#1e293b] text-white shadow-lg  border-slate-600"} 
     `
     }>
       {/* Left side: Drawer Menu & App Name */}
@@ -120,7 +120,7 @@ export default function Header() {
         {/* Desktop Search */}
         {!authDoctor && !authUser ?
           null :
-          <div className="hidden items-center md:flex">
+          <div className="hidden items-center lg:flex">
             <input
               type="text"
               placeholder="Search"
@@ -192,6 +192,6 @@ export default function Header() {
         </div>
       </Drawer>
 
-    </header>
+    </div>
   );
 }

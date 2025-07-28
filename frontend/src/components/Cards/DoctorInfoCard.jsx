@@ -18,7 +18,7 @@ export default function DoctorInfoCard({ doctor }) {
       );
       // setResponse(response.data);
       navigate(`/p/doctors/${doctor._id}`, { state: { doctorData: response.data } });
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.error("Error while fetching doctor details :", error)
     }

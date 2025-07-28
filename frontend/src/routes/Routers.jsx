@@ -37,6 +37,7 @@ import Notifications from "../d_pages/Notifications.jsx";
 import Reports from "../d_pages/Reports.jsx";
 import Payment from "../pages/Doctors/Appointment/Payment.jsx";
 import Landing from "../Landing.jsx";
+import P_Appointments from "../pages/Profile/P_Appointments.jsx";
 
 
 // import { DoctorDetails } from "../components/DetailedInfo/DoctorDetails.jsx";
@@ -69,6 +70,11 @@ export default function Routers() {
           element={authUser ? <Services /> : <Navigate to="/login" />}
         />
         <Route
+          path="/p/appointments"
+          element={authUser ? <P_Appointments /> : <Navigate to="/login" />}
+        />
+
+        <Route
           path="/p/doctors"
           element={authUser ? <Doctors /> : <Navigate to="/login" />}
         />
@@ -86,7 +92,7 @@ export default function Routers() {
         />
         <Route path="/profile" element={<Edit />} />
 
-        <Route path="appointment/payment" element={authUser ? <Payment /> : <Navigate to="/login" />} />
+        <Route path="/p/doctors/:id/appointments/:id/payment" element={authUser ? <Payment /> : <Navigate to="/login" />} />
 
         {/* Doctor Routes  */}
         <Route

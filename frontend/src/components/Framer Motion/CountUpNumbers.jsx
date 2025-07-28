@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-const CountUpNumber = ({ from = 0, to = 1000, duration = 2 }) => {
+const CountUpNumber = ({ from = 0, to = 1000, duration = 3 }) => {
   const [count, setCount] = useState(from);
 
   useEffect(() => {

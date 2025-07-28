@@ -31,9 +31,9 @@ export default function Contact() {
   return (
     <div className=" flex justify-center ">
       <div className={`flex my-4 min-h-screen flex-col items-center  ${currTheme === "light" ? "bg-blue-200 border-blue-400" : "bg-slate-800 border-slate-400"} border  rounded-xl p-6`}>
-        <h1 className={`mb-4 text-3xl font-bold ${currTheme === " light" ? "text-blue-800" : "text-amber-500"} `}>Contact Us</h1>
+        <h1 className={`mb-4 text-3xl font-bold ${currTheme === "light" ? "text-blue-800" : "text-amber-500"} `}>Contact Us</h1>
         
-        <p className={`mb-6 max-w-md text-center ${currTheme === " light" ? "text-gray-700" : "text-slate-300"} `}>
+        <p className={`mb-6 max-w-md text-center ${currTheme === "light" ? "text-gray-700" : "text-slate-300"} `}>
           Have questions or need assistance? Feel free to reach out to us.
         </p>
 
@@ -66,6 +66,7 @@ export default function Contact() {
               label="Your Name"
               variant="outlined"
               name="name"
+              className={`${currTheme === "dark" ? "text-slate-300" : ""}`}
               fullWidth
               required
               value={formData.name}
@@ -76,6 +77,7 @@ export default function Contact() {
               type="email"
               variant="outlined"
               name="email"
+              className={`!${currTheme === "dark" ? "!text-slate-300" : ""}`}
               fullWidth
               required
               value={formData.email}
@@ -85,6 +87,7 @@ export default function Contact() {
               label="Your Message"
               variant="outlined"
               name="message"
+              className={`${currTheme === "dark" ? "text-slate-300" : ""}`}
               multiline
               rows={4}
               fullWidth

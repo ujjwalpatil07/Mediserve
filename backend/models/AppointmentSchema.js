@@ -12,9 +12,13 @@ const AppointmentSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    ticketPrice: { type: String, required: true },
+    ticketPrice: { type: Number, required: true },
     appointmentDate: {
-      type: Date,
+      type: String,
+      required: true,
+    },
+    appointmentTime: {
+      type: String,
       required: true,
     },
     status: {
@@ -22,9 +26,10 @@ const AppointmentSchema = new mongoose.Schema(
       enum: ["pending", "approved", "cancelled"],
       default: "pending",
     },
-    isPaid: {
-      type: Boolean,
-      default: true,
+    isPaid: { type: Boolean, default: false },
+    paymentReciept: {
+      type: mongoose.Types.ObjectId,
+      ref: "Payment",
     },
   },
   { timestamps: true }
